@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0a0c10" />
+  <meta name="description" content="Антон Никифоров — Python / Backend developer и системный аналитик. Python, FastAPI, Django, PostgreSQL, AI/LLM, автоматизация и интеграции." />
+  <title>Антон Никифоров — Python / Backend Developer</title>
+  <style>
+    :root{
+      --bg:#090b0f; --panel:#11151c; --panel2:#0e1218; --text:#f3f5f7; --muted:#9aa5b1;
+      --line:#232a34; --accent:#92ff6d; --accent2:#73d5ff; --warn:#ffd166; --shadow:0 22px 70px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(1000px 700px at 75% -10%,rgba(115,213,255,.10),transparent 56%),radial-gradient(900px 600px at 10% 20%,rgba(146,255,109,.07),transparent 55%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:20;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}
+    header{position:sticky;top:0;z-index:10;background:rgba(9,11,15,.75);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.05)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}.dot{width:10px;height:10px;border-radius:99px;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    .navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}.navlinks a:hover{color:var(--text)}
+    .status{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);border:1px solid rgba(146,255,109,.25);padding:8px 11px;border-radius:999px;background:rgba(146,255,109,.05)}
+    .hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.35fr .9fr;gap:70px;align-items:center;padding:88px 0 70px}.eyebrow{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+    h1{font-size:clamp(54px,7vw,100px);line-height:.93;letter-spacing:-.055em;margin:0 0 28px;max-width:850px}.hero h1 span{color:transparent;-webkit-text-stroke:1px rgba(243,245,247,.58)}
+    .lead{font-size:clamp(19px,2vw,26px);color:#c2c9d1;max-width:770px;margin:0 0 34px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:12px;padding:13px 16px;font-weight:700;font-size:14px;border:1px solid var(--line);background:#11161d;transition:.2s transform,.2s background,.2s border}.btn:hover{transform:translateY(-2px);border-color:#394250}.btn.primary{background:var(--accent);color:#071006;border-color:var(--accent)}
+    .hero-card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(17,21,28,.92),rgba(11,14,19,.92));box-shadow:var(--shadow);overflow:hidden;transform:rotate(1.2deg)}
+    .terminal-top{display:flex;align-items:center;gap:7px;height:42px;padding:0 15px;border-bottom:1px solid var(--line);background:#0d1117}.terminal-top i{display:block;width:9px;height:9px;border-radius:50%;background:#313844}.terminal-top i:nth-child(1){background:#ff6b6b}.terminal-top i:nth-child(2){background:#ffd166}.terminal-top i:nth-child(3){background:#92ff6d}.terminal-title{margin-left:auto;color:#67717f;font:11px ui-monospace,monospace}
+    pre{margin:0;padding:24px 24px 28px;color:#c9d4df;white-space:pre-wrap;font:13px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace}.k{color:#c792ea}.s{color:#c3e88d}.v{color:#82aaff}.c{color:#64707e}.n{color:#f78c6c}
+    section{padding:100px 0;border-top:1px solid rgba(255,255,255,.05)}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:42px}.kicker{color:var(--accent);font:12px ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}.section-head h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.04em;line-height:1;margin:7px 0 0}.section-note{max-width:450px;color:var(--muted);font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:linear-gradient(180deg,rgba(18,23,30,.92),rgba(12,16,21,.92));border:1px solid var(--line);border-radius:18px;padding:26px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:-1px;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(146,255,109,.12),transparent 25%,transparent 70%,rgba(115,213,255,.08));mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:1px}.metric{grid-column:span 3;min-height:170px}.metric strong{display:block;font-size:46px;letter-spacing:-.05em;margin-top:25px}.metric span{color:var(--muted);font-size:13px}.metric small{display:block;color:#b8c2cc;margin-top:8px}
+    .exp{grid-column:span 6;min-height:340px}.exp .date{font:12px ui-monospace,monospace;color:var(--muted)}.exp h3{font-size:28px;letter-spacing:-.025em;margin:14px 0 6px}.exp .role{color:var(--accent);font-weight:700;margin-bottom:16px}.exp ul{padding-left:18px;color:#bcc5cf}.exp li{margin:8px 0}.tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{font:12px ui-monospace,monospace;padding:7px 9px;border:1px solid #2a323d;border-radius:999px;color:#aab5c1;background:#0c1015}
+    .project{grid-column:span 4;min-height:320px;display:flex;flex-direction:column}.project .num{font:12px ui-monospace,monospace;color:var(--accent)}.project h3{font-size:26px;letter-spacing:-.03em;margin:18px 0 12px}.project p{color:var(--muted);margin:0 0 20px}.project .stack{margin-top:auto;font:12px ui-monospace,monospace;color:#b7c2cd}.project:hover{transform:translateY(-4px);transition:.22s transform;border-color:#35404c}
+    .skills{grid-column:span 7}.edu{grid-column:span 5}.skillgroup{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}.skillgroup:last-child{border-bottom:0}.skillgroup b{font-size:14px}.skillgroup p{margin:0;color:var(--muted)}.eduitem{padding:18px 0;border-bottom:1px solid var(--line)}.eduitem:last-child{border-bottom:0}.eduitem h4{font-size:19px;margin:0 0 6px}.eduitem p{margin:0;color:var(--muted)}
+    .quote{font-size:clamp(32px,5vw,66px);letter-spacing:-.045em;line-height:1.08;max-width:1000px;margin:0}.quote em{font-style:normal;color:var(--accent)}
+    .contact{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}.contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.contact-links a,.contact-links button{cursor:pointer;font:14px inherit;color:var(--text);background:#11161d;border:1px solid var(--line);border-radius:12px;padding:12px 14px}.contact-links a:hover,.contact-links button:hover{border-color:#3a4551}
+    footer{padding:34px 0 50px;color:#6f7b88;font:12px ui-monospace,monospace;display:flex;justify-content:space-between;gap:20px}.reveal{opacity:0;transform:translateY(20px);transition:.6s ease}.reveal.on{opacity:1;transform:none}
+    @media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;gap:40px;padding-top:60px}.hero-card{transform:none}.metric{grid-column:span 6}.exp,.skills,.edu{grid-column:span 12}.project{grid-column:span 6}.contact{grid-template-columns:1fr}.section-head{display:block}.section-note{margin-top:18px}}
+    @media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}nav{height:64px}.status{display:none}.hero{min-height:auto;padding:60px 0 70px}h1{font-size:50px}.lead{font-size:18px}.metric,.project{grid-column:span 12}.exp{min-height:auto}.skillgroup{grid-template-columns:1fr;gap:8px}.card{padding:21px}section{padding:75px 0}.quote{font-size:38px}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.project{transition:none}}
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+<header>
+  <div class="wrap"><nav>
+    <a class="brand" href="#top"><span class="dot"></span> AN / backend</a>
+    <div class="navlinks"><a href="#experience">Опыт</a><a href="#projects">Проекты</a><a href="#stack">Стек</a><a href="#contact">Контакты</a></div>
+    <div class="status">● open to work</div>
+  </nav></div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="reveal">
+      <div class="eyebrow">Python · Backend · System Analysis · AI</div>
+      <h1>Антон<br><span>Никифоров</span></h1>
+      <p class="lead">Разрабатываю backend-системы, автоматизирую ручные процессы и разбираю сложные задачи до понятной архитектуры — от требований и данных до production‑решения.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Смотреть проекты ↘</a>
+        <a class="btn" href="Anton_Nikiforov_CV_RU.docx" download>Скачать CV ↓</a>
+        <a class="btn" href="https://github.com/TonyGoalsMan1" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-card reveal" aria-label="Code profile card">
+      <div class="terminal-top"><i></i><i></i><i></i><span class="terminal-title">profile.py</span></div>
+      <pre><span class="k">class</span> <span class="v">Anton</span>:
+    role = <span class="s">"Python / Backend Developer"</span>
+    focus = [
+        <span class="s">"APIs"</span>, <span class="s">"automation"</span>,
+        <span class="s">"data"</span>, <span class="s">"system analysis"</span>,
+        <span class="s">"AI / LLM"</span>
+    ]
+
+    <span class="c"># production mindset</span>
+    def solve(self, problem):
+        requirements = self.analyze(problem)
+        solution = self.build(requirements)
+        <span class="k">return</span> self.verify(solution)
+
+<span class="n">300_000+</span> files analyzed
+<span class="n">30x/day</span> data refresh cycle
+<span class="n">3–5x</span> SQL speed-up</pre>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="kicker">01 / Impact</div><h2>Не просто код.<br>Измеримый результат.</h2></div><p class="section-note">Сайт построен не как перечень обязанностей, а как короткий рассказ о том, какую сложность Антон умеет брать на себя.</p></div>
+      <div class="grid">
+        <div class="card metric reveal"><span>Объём данных</span><strong>300K+</strong><small>файлов в рабочем массиве</small></div>
+        <div class="card metric reveal"><span>Автообновление</span><strong>30×</strong><small>циклов в сутки</small></div>
+        <div class="card metric reveal"><span>SQL performance</span><strong>3–5×</strong><small>ускорение критичных операций</small></div>
+        <div class="card metric reveal"><span>English</span><strong>C1</strong><small>advanced</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="kicker">02 / Experience</div><h2>Опыт</h2></div><p class="section-note">Backend-разработка + системный анализ + сопровождение: сильная комбинация для продуктовых и внутренних платформ.</p></div>
+      <div class="grid">
+        <article class="card exp reveal"><div class="date">НОЯ 2024 — ИЮЛ 2025</div><h3>Сбербанк · Автоматизированная система торгов</h3><div class="role">Разработчик / сопровождение / системный анализ</div><ul><li>Python‑функции и скрипты для поиска, проверки и анализа больших массивов данных.</li><li>Анализ требований, бизнес‑процессов и влияния изменений на систему.</li><li>Оптимизация SQL и сложных JOIN — ускорение отдельных операций примерно в 3–5 раз.</li><li>Поддержка корпоративной системы, тестирование и полный цикл прикладных задач.</li></ul><div class="tagrow"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Linux</span><span class="tag">Git</span><span class="tag">System Analysis</span></div></article>
+        <article class="card exp reveal"><div class="date">АВГ 2021 — ИЮЛ 2024</div><h3>Технологии Надёжности</h3><div class="role">Python / Web Developer</div><ul><li>Перенос функционала с ASP.NET и PHP на Python.</li><li>Backend‑логика, web‑модули и API‑интеграции.</li><li>PostgreSQL / SQLite, участие в проектировании БД и оптимизации запросов.</li><li>Рефакторинг legacy‑кода и автоматизация повторяющихся операций.</li></ul><div class="tagrow"><span class="tag">Python</span><span class="tag">REST API</span><span class="tag">PostgreSQL</span><span class="tag">SQLite</span><span class="tag">Legacy → Modern</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="kicker">03 / Selected projects</div><h2>Проекты</h2></div><p class="section-note">Проекты показывают не только стек, но и тип мышления: API, асинхронность, AI, хранение данных, события и автоматические действия.</p></div>
+      <div class="grid">
+        <article class="card project reveal"><div class="num">PROJECT / 01</div><h3>ChatBot Study</h3><p>AI‑бот для обучения программированию: генерация и проверка заданий, персонализированная практика и обратная связь.</p><div class="stack">Python · FastAPI · PostgreSQL · OpenAI API · SQLAlchemy</div></article>
+        <article class="card project reveal"><div class="num">PROJECT / 02</div><h3>AI Telegram Planner</h3><p>Помощник для планирования задач, напоминаний и отслеживания целей с NLP‑слоем, API и хранением данных.</p><div class="stack">Python · API · NLP · Telegram</div></article>
+        <article class="card project reveal"><div class="num">PROJECT / 03</div><h3>Flight Alert Bot</h3><p>Асинхронный мониторинг цен на авиабилеты и автоматическая отправка уведомлений при снижении стоимости.</p><div class="stack">Python · asyncio · REST API · Telegram Bot API</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal"><div><div class="kicker">04 / Toolkit</div><h2>Стек и база</h2></div></div>
+      <div class="grid">
+        <div class="card skills reveal">
+          <div class="skillgroup"><b>Python</b><p>FastAPI, Flask, Django, asyncio, pytest</p></div>
+          <div class="skillgroup"><b>Backend</b><p>REST API, серверная логика, интеграции</p></div>
+          <div class="skillgroup"><b>Data</b><p>PostgreSQL, SQLite, MongoDB, Pandas, SQL, ETL</p></div>
+          <div class="skillgroup"><b>AI / ML</b><p>scikit‑learn, NLP, LLM, анализ данных</p></div>
+          <div class="skillgroup"><b>Infra</b><p>Linux, Docker, Git, CI/CD, логирование, мониторинг</p></div>
+          <div class="skillgroup"><b>Web</b><p>HTML, CSS, JavaScript, PHP</p></div>
+        </div>
+        <div class="card edu reveal">
+          <div class="kicker">Education</div>
+          <div class="eduitem"><h4>МГУ им. М. В. Ломоносова</h4><p>ВМК · Big Data · магистратура, 2027</p></div>
+          <div class="eduitem"><h4>БГТУ им. В. Г. Шухова</h4><p>Программная инженерия, 2025</p></div>
+          <div class="eduitem"><h4>Командная работа</h4><p>Распределение задач, помощь коллегам, code review.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal"><p class="quote">Мне интересны задачи, где нужно не «написать функцию», а <em>понять систему</em>, убрать ручной труд и сделать решение устойчивым.</p></div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact reveal">
+      <div><div class="kicker">05 / Contact</div><h2 style="font-size:clamp(42px,7vw,86px);letter-spacing:-.05em;line-height:.98;margin:8px 0 0">Есть сложная задача?<br>Давайте разберём.</h2>
+        <div class="contact-links"><a href="mailto:nikiforov.anton.pv201@gmail.com">nikiforov.anton.pv201@gmail.com</a><a href="https://t.me/c_lma" target="_blank" rel="noreferrer">Telegram @c_lma</a><a href="tel:+79205680667">+7 920 568‑06‑67</a><button id="copyEmail">Копировать email</button></div>
+      </div>
+      <a class="btn primary" href="mailto:nikiforov.anton.pv201@gmail.com">Написать →</a>
+    </div>
+  </section>
+</main>
+
+<div class="wrap"><footer><span>© 2026 Anton Nikiforov</span><span>Python / Backend / System Analysis</span></footer></div>
+<script>
+  const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const btn=document.getElementById('copyEmail');
+  btn?.addEventListener('click',async()=>{await navigator.clipboard.writeText('nikiforov.anton.pv201@gmail.com');const old=btn.textContent;btn.textContent='Скопировано ✓';setTimeout(()=>btn.textContent=old,1500)});
+</script>
+</body>
+</html>
