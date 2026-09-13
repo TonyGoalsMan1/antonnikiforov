@@ -1,0 +1,126 @@
+{
+  "supported_site_languages": [
+    "en",
+    "ru",
+    "de",
+    "fr",
+    "es",
+    "it",
+    "pt",
+    "nl",
+    "pl",
+    "tr",
+    "uk",
+    "zh",
+    "ja",
+    "ko",
+    "ar"
+  ],
+  "fallback": "en",
+  "pdfs": {
+    "en": true,
+    "ru": true,
+    "de": true,
+    "fr": true,
+    "es": true,
+    "it": true,
+    "pt": true,
+    "nl": true,
+    "pl": true,
+    "tr": true,
+    "uk": true,
+    "zh": true,
+    "ja": true,
+    "ko": true,
+    "ar": true
+  },
+  "js_syntax": true,
+  "locale_resolution": {
+    "ru-RU": {
+      "got": "ru",
+      "expected": "ru",
+      "ok": true
+    },
+    "de-DE": {
+      "got": "de",
+      "expected": "de",
+      "ok": true
+    },
+    "fr-CA": {
+      "got": "fr",
+      "expected": "fr",
+      "ok": true
+    },
+    "es-MX": {
+      "got": "es",
+      "expected": "es",
+      "ok": true
+    },
+    "it-IT": {
+      "got": "it",
+      "expected": "it",
+      "ok": true
+    },
+    "pt-BR": {
+      "got": "pt",
+      "expected": "pt",
+      "ok": true
+    },
+    "nl-NL": {
+      "got": "nl",
+      "expected": "nl",
+      "ok": true
+    },
+    "pl-PL": {
+      "got": "pl",
+      "expected": "pl",
+      "ok": true
+    },
+    "tr-TR": {
+      "got": "tr",
+      "expected": "tr",
+      "ok": true
+    },
+    "uk-UA": {
+      "got": "uk",
+      "expected": "uk",
+      "ok": true
+    },
+    "zh-CN": {
+      "got": "zh",
+      "expected": "zh",
+      "ok": true
+    },
+    "ja-JP": {
+      "got": "ja",
+      "expected": "ja",
+      "ok": true
+    },
+    "ko-KR": {
+      "got": "ko",
+      "expected": "ko",
+      "ok": true
+    },
+    "ar-SA": {
+      "got": "ar",
+      "expected": "ar",
+      "ok": true
+    },
+    "sv-SE": {
+      "got": "en",
+      "expected": "en",
+      "ok": true
+    }
+  },
+  "html_translation_keys": 76,
+  "missing_translation_keys": {},
+  "js_error": "",
+  "chromium_smoke": {
+    "en-US": false,
+    "ru-RU": false,
+    "de-DE": false,
+    "zh-CN": false,
+    "ja-JP": false,
+    "ar-SA": false
+  }
+}
